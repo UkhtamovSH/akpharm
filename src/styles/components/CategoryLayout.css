@@ -1,0 +1,121 @@
+.categoryLayout {
+  padding: 60px 0;
+  background-color: #f3f4f6;
+}
+
+.categoryLayout_flex {
+  display: flex;
+}
+
+.categoryLayout__sub1 {
+  width: 300px;
+}
+
+.categoryLayout__sub2 {
+  width: 100%;
+}
+
+.categoryLayout__sub1 a {
+  padding: 24px 20px 24px 24px;
+}
+
+.notActiveLink:hover {
+  color: #011A61;
+}
+
+.notActiveLink {
+  display: block;
+  background-color: transparent;
+  font-family: "Rubik-Regular";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #011A61;
+  text-decoration: none !important;
+}
+
+.activeNavLink {
+  background-color: #fff;
+  font-family: "Rubik-Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #011A61;
+  border-radius: 8px 0px 0px 8px;
+  position: relative;
+}
+
+.categoryLayout__sub2 {
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.activeNavLink::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  top: 0;
+  right: -30px;
+  position: absolute;
+}
+
+.activeNavLink::before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  bottom: 0;
+  right: -30px;
+  position: absolute;
+}
+
+.categoryCardImgDiv {
+  height: 140px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.categoryCardImg {
+  height: 140px;
+}
+
+.categoryCard {
+  background: #fff;
+  box-shadow: rgb(200 200 200 / 5%) 16px 24px 24px;
+  border-radius: 12px !important;
+  width: 100%;
+  min-height: 226px;
+  border: 2px solid rgba(1, 26, 97, 0.1);
+  margin: 8px;
+  overflow: hidden;
+}
+
+.categoryCardInfo {
+  padding: 16px;
+}
+
+.categoryCardInfo p:nth-child(1) {
+  font-family: "Rubik-Regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #70798B;
+}
+
+.categoryCardInfo p:nth-child(2) {
+  font-family: "Rubik-Medium";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: #011A61;
+}

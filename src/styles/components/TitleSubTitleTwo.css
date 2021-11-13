@@ -1,0 +1,17 @@
+.titleSubTitleTwo1 {
+  font-family: "Rubik-Medium", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 19px;
+  color: #011A61;
+}
+
+.titleSubTitleTwo2 {
+  font-family: "Rubik-Regular", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #70798B;
+}

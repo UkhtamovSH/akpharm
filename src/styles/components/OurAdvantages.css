@@ -1,0 +1,14 @@
+.ourAdvantages {
+  padding: 80px 0;
+  background-color: #f3f4f6;
+  position: relative;
+  width: 100%;
+  background-image: url('../../assets/svg/ourAdvantages.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ourAdvantages_container {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}

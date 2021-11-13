@@ -1,0 +1,76 @@
+.footerSection {
+  padding: 50px 0;
+}
+
+.footerSection__flex {
+  display: flex;
+}
+
+.footerSection__sub {
+  width: 33%;
+}
+
+.footerNumber span {
+  color: #000;
+}
+
+.footerNumber span:nth-child(1) {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Rubik-Regular";
+}
+
+.footerNumber span:nth-child(2) {
+  font-size: 32px;
+  font-weight: 500;
+  font-family: "Rubik-Bold";
+}
+
+.footerSection__links a {
+  display: block;
+}
+
+.footerSection__links a {
+  color: #000;
+  font-family: "Rubik-Regular", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.footerSection__links a:hover {
+  color: #6001D3;
+}
+
+.navbar__linksActive {
+  color: #6001D3 !important;
+}
+
+.footerSection__linksTitle {
+  font-family: "Rubik-Bold";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #1F2022;
+}
+
+.footerSection__linksTitle div {
+  display: flex;
+}
+
+.footerSection__linksDiv {
+  width: 40px;
+  display: inline-block;
+}
+
+.footerSection__linksTitle span {
+  font-family: "Rubik-Regular";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  color: #1F2022;
+}

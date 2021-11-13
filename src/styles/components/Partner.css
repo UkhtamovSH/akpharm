@@ -1,0 +1,37 @@
+.logoPartnerSection {
+  padding: 60px 0;
+  background-color: #f3f4f6;
+}
+
+.logoPartnerFlex {
+  display: flex;
+}
+
+.logoPartnerDiv {
+  padding: 52px 10px;
+  background: #FFFFFF;
+  border-radius: 27.4451px;
+  width: 300px;
+  height: 250px;
+}
+
+.logoPartnerDiv img {
+  height: 100px;
+}
+
+.logoPartnerDivSub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 100%;
+}
+
+.logoPartnerDiv2>.titleSubTitle1,
+.logoPartnerDiv2>.titleSubTitle2 {
+  width: 100%;
+}
+
+.logoPartnerDiv2 {
+  margin-left: 30px;
+}

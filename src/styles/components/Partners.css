@@ -1,0 +1,14 @@
+.partnersSection {
+  padding: 60px 0;
+}
+
+.partnersImg {
+  min-width: 76.56px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.partnersImgCard {
+  padding: 29px 30px;
+  display: inline-block !important;
+}

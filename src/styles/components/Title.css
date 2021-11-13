@@ -1,0 +1,42 @@
+.titleApp {
+  font-family: "Nunito-Bold", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 51px;
+  text-align: center;
+  color: #011A61;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+  .titleSubTitle1 {
+    font-size: 38px;
+    line-height: 37px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 765px) {
+  .titleSubTitle1 {
+    font-size: 28px;
+    line-height: 37px;
+  }
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+  .titleSubTitle1 {
+    font-size: 28px;
+    line-height: 37px;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .titleSubTitle1 {
+    font-size: 28px;
+    line-height: 37px;
+  }
+}

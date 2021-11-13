@@ -1,0 +1,16 @@
+.partnersImg {
+  min-width: 76.56px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.partnersManufacturerCard {
+  padding: 51px 10px;
+  border-radius: 27.4451px !important;
+  border: none !important;
+}
+
+.partnersManufacturer {
+  padding: 60px 0;
+  background-color: #f3f4f6;
+}

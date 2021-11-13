@@ -1,0 +1,106 @@
+.howContactSection {
+  padding: 60px 0;
+  background-color: #f3f4f6;
+}
+
+.howContactSectionCol2 {
+  display: block;
+}
+
+.howContactSectionCol22 {
+  display: none;
+}
+
+.forSvg {
+  display: flex;
+  align-items: end;
+  height: 100%;
+  transform: translate(0, -35px);
+}
+
+.howContactSectionCol1 .titleSubTitle1,
+.titleSubTitle2 {
+  width: 70%;
+}
+
+.howContactSectionCol2Row {
+  align-items: end;
+  height: 100%;
+}
+
+.howContactSVG {
+  width: 40px;
+  height: 40px;
+}
+
+
+.howContactAnother1,
+.howContactAnother2,
+.howContactAnother3 {
+  position: relative;
+}
+
+.howContactAnother1Sub {
+  background-image: url("../../assets/svg/content3.svg");
+}
+
+.howContactAnother2Sub {
+  background-image: url("../../assets/svg/content2.svg");
+}
+
+.howContactAnother3Sub {
+  background-image: url("../../assets/svg/content1.svg");
+}
+
+.howContactAnother1Sub,
+.howContactAnother2Sub,
+.howContactAnother3Sub {
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  transform: translate(120px, 0);
+}
+
+
+.howContactSectionCol3Row {
+  padding: 40px 0;
+}
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {}
+
+@media (max-width: 992px) and (min-width: 765px) {
+  .howContactSectionCol2 {
+    display: none;
+  }
+
+  .howContactSectionCol22 {
+    display: block;
+  }
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+  .howContactSectionCol2 {
+    display: none;
+  }
+
+  .howContactSectionCol22 {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .howContactSectionCol2 {
+    display: none;
+  }
+
+  .howContactSectionCol22 {
+    display: block;
+  }
+}

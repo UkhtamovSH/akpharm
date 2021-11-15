@@ -42,7 +42,7 @@ const OurAdvantages = () => {
           />
           <Row>
             {dataAdvantages.map((item, index) => (
-              <Col md={3} key={index} className="text-center">
+              <Col sm={6} md={6} lg={3} xl={3} key={index} className="ourAdvantagesCol text-center">
                 <img src={item.img} className="mb-3" alt="" />
                 <TiteSubTitleTwo
                   title={item.title}

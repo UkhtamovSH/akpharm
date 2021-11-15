@@ -10,5 +10,12 @@
 
 .partnersImgCard {
   padding: 29px 30px;
-  display: inline-block !important;
+  /* display: inline-block !important; */
+  /* text-align: center; */
 }
+
+/* .partnersImgCardFlex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+} */

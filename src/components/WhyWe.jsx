@@ -24,7 +24,7 @@ const WhyWe = () => {
       <section className="whyWeSection">
         <Container>
           <Row className="align-items-center h-100">
-            <Col md={6} className="whyWeSection__Col1">
+            <Col sm={12} md={12} lg={6} xl={6} className="whyWeSection__Col1">
               <TitleSubTitle
                 title={title}
                 subtitle={subtitle}
@@ -46,7 +46,7 @@ const WhyWe = () => {
                 </Col>
               </Row>
             </Col>
-            <Col md={6} className="whyWeSection__Col2">
+            <Col sm={12} md={12} lg={6} xl={6} className="whyWeSection__Col2">
               <img
                 src={WhyWeImg1}
                 className="whyWeSection__Col2Img1" alt="" />

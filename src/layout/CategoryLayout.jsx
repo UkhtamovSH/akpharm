@@ -4,13 +4,16 @@ import CategoryLink from "../components/category/CategoryLink"
 import { NavLink } from "react-router-dom"
 import '../styles/components/CategoryLayout.css'
 import { Container } from "reactstrap"
+import { getLanguage } from "../helpers/language"
 
 const CategoryLayout = (props) => {
   const [category, setCategory] = useState([])
 
+  const lan = getLanguage();
+
   const getCategory = () => {
     getNotAuthInstance()
-      .get('/api/v1/category-list/?lan=uz')
+      .get(`/api/v1/category-list/?lan=${lan}`)
       .then((res) => {
         setCategory(res.data)
       }).catch((err) => { });

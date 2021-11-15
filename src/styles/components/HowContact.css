@@ -18,10 +18,10 @@
   transform: translate(0, -35px);
 }
 
-.howContactSectionCol1 .titleSubTitle1,
+/* .howContactSectionCol1 .titleSubTitle1,
 .titleSubTitle2 {
   width: 70%;
-}
+} */
 
 .howContactSectionCol2Row {
   align-items: end;
@@ -32,7 +32,6 @@
   width: 40px;
   height: 40px;
 }
-
 
 .howContactAnother1,
 .howContactAnother2,
@@ -69,6 +68,12 @@
   padding: 40px 0;
 }
 
+
+.contentRight {
+  width: 60px;
+  height: 60px;
+}
+
 @media (min-width: 1500px) {}
 
 @media (max-width: 1500px) and (min-width: 1200px) {}
@@ -83,6 +88,14 @@
   .howContactSectionCol22 {
     display: block;
   }
+
+  .howContactSectionColSUB {
+    display: none;
+  }
+
+  .howContactSectionCol1 {
+    margin: 0 0 100px 0;
+  }
 }
 
 @media (max-width: 765px) and (min-width: 576px) {
@@ -93,6 +106,15 @@
   .howContactSectionCol22 {
     display: block;
   }
+
+  .howContactSectionColSUB {
+    display: none;
+  }
+
+  .howContactSectionCol1 {
+    margin: 0 0 80px 0;
+  }
+
 }
 
 @media only screen and (max-width: 576px) and (min-width: 320px) {
@@ -102,5 +124,13 @@
 
   .howContactSectionCol22 {
     display: block;
+  }
+
+  .howContactSectionColSUB {
+    display: none;
+  }
+
+  .howContactSectionCol1 {
+    margin: 0 0 80px 0;
   }
 }

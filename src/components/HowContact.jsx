@@ -23,12 +23,12 @@ const HowContact = () => {
 
   const forCol = (
     <Row className="howContactSectionCol2Row">
-      <Col md={3}>
+      <Col md={12} lg={3} xl={3} className="howContactSectionColSUB">
         <div className="forSvg">
           <img src={HowContactSVG} className="howContactSVG" alt="" />
         </div>
       </Col>
-      <Col md={9} className="howContactAnother1">
+      <Col md={12} lg={9} xl={9} className="howContactAnother1">
         <img src={ContentRight1} className="contentRight mb-4" alt="" />
         <div className="howContactAnother1Sub" />
         <TitleSubTitleTwo
@@ -56,24 +56,32 @@ const HowContact = () => {
             <Col md={12} lg={4} xl={4} className="howContactSectionCol2">
               {forCol}
             </Col>
-            <Col md={{ offset: 8, size: 4 }} className="howContactSectionCol22">
+            <Col
+              xs={{ offset: 0, size: 12 }}
+              sm={{ offset: 0, size: 12 }}
+              md={{ offset: 0, size: 12 }}
+              lg={{ offset: 4, size: 4 }}
+              xl={{ offset: 4, size: 4 }}
+              className="howContactSectionCol22">
               {forCol}
             </Col>
           </Row>
           <Row className="howContactSectionCol3Row">
             <Col
-              md={{ offset: 4, size: 4 }}
+              xs={{ offset: 0, size: 12 }}
+              sm={{ offset: 0, size: 12 }}
+              md={{ offset: 0, size: 12 }}
               lg={{ offset: 4, size: 4 }}
               xl={{ offset: 4, size: 4 }}
               className="howContactSectionCol3"
             >
               <Row>
-                <Col md={3}>
+                <Col md={12} lg={3} xl={3} className="howContactSectionColSUB">
                   <div className="forSvg">
                     <img src={HowContactSVG} className="howContactSVG" alt="" />
                   </div>
                 </Col>
-                <Col md={9} className="howContactAnother2">
+                <Col md={12} lg={9} xl={9} className="howContactAnother2">
                   <img src={ContentRight2} className="contentRight mb-4" alt="" />
                   <div className="howContactAnother2Sub" />
                   <TitleSubTitleTwo
@@ -86,15 +94,17 @@ const HowContact = () => {
           </Row>
           <Row>
             <Col
-              md={{ offset: 0, size: 4 }}
+              xs={{ offset: 0, size: 12 }}
+              sm={{ offset: 0, size: 12 }}
+              md={{ offset: 0, size: 12 }}
               lg={{ offset: 0, size: 4 }}
               xl={{ offset: 0, size: 4 }}
               className="howContactSectionCol4"
             >
               <Row>
-                <Col md={3}>
+                <Col md={12} lg={3} xl={3} className="howContactSectionColSUB">
                 </Col>
-                <Col md={9} className="howContactAnother3">
+                <Col md={12} lg={9} xl={9} className="howContactAnother3">
                   <img src={ContentRight3} className="contentRight mb-4" alt="" />
                   <div className="howContactAnother3Sub" />
                   <TitleSubTitleTwo

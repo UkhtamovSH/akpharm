@@ -1,21 +1,35 @@
 import { useEffect, useState } from "react"
+import InfiniteScroll from "react-infinite-scroll-component"
 import { Col, Row } from "reactstrap"
 import CategoryCard from "../components/category/CategoryCard"
 import Header from "../components/Header"
 import PartnersView from "../components/PartnersView"
 import { getNotAuthInstance } from "../helpers/httpClient"
+import { getLanguage } from "../helpers/language"
 import CategoryLayout from "../layout/CategoryLayout"
 import Main from "../layout/Main"
 
 const Categories = (props) => {
-  const [results, setResults] = useState([])
-  const slug = props.match.params.slug
+  const [resultsCategory, setResultsCategory] = useState([])
+  const [nextUrl, setNextUrl] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const getResults = () => {
+  const lan = getLanguage();
+
+  const slug = props.match.params.slug
+  // "https://api.akpharm.uz/api/v1/drug-list/" + (slug ? "?category=" + slug : "")
+  const getResults = (
+    page = 1,
+    next_url = `https://api.akpharm.uz/api/v1/drug-list/?page=${page}&category=${slug}&lan=${lan}`) => {
+    if (page === 1) {
+      setLoading(true);
+    }
     getNotAuthInstance()
-      .get("https://api.akpharm.uz/api/v1/drug-list/" + (slug ? "?category=" + slug : ""))
+      .get(next_url)
       .then((res) => {
-        setResults(res.data.results)
+        setResultsCategory([...resultsCategory, ...res.data.results])
+        setNextUrl(res.data.next);
+        setLoading(false);
       }).catch((err) => { });
   }
   useEffect(() => {
@@ -27,18 +41,31 @@ const Categories = (props) => {
     <Main>
       <Header title={title} />
       <CategoryLayout>
-        <Row>
-          {results.map((result, index) => (
-            <Col md={4}>
-              <CategoryCard
-                img={result.image}
-                name={result.name}
-                name2={result.manufacturer.name}
-                key={index}
-              />
-            </Col>
-          ))}
-        </Row>
+        <InfiniteScroll
+          dataLength={resultsCategory.length}
+          next={() => {
+            getResults(2, nextUrl);
+          }}
+          hasMore={nextUrl ? true : false}
+          loader={<h4>Loading...</h4>}
+          endMessage={
+            <p style={{ textAlign: "center" }}>
+              <b>You have seen it all</b>
+            </p>
+          }
+        >
+          <Row>
+            {resultsCategory.map((result, index) => (
+              <Col md={6} lg={6} xl={4} key={index}>
+                <CategoryCard
+                  img={result.image}
+                  name={result.name}
+                  name2={result.manufacturer.name}
+                />
+              </Col>
+            ))}
+          </Row>
+        </InfiniteScroll>
       </CategoryLayout>
       <section className="partnersViewCategories">
         <PartnersView />

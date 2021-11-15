@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link, NavLink } from "react-router-dom"
-import { Container } from "reactstrap"
+import { Container, Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from "reactstrap"
 import '../../styles/components/Navbar.css'
 import Logo from '../../assets/svg/logo.svg'
 import LogoBlue from '../../assets/svg/logoblue.svg'
@@ -8,12 +8,29 @@ import MenuLineDark from '../../assets/svg/menu-line-dark.svg'
 import MenuLineWhite from '../../assets/svg/menu-line-white.svg'
 import CloseLineDark from '../../assets/svg/close-line-dark.svg'
 import CloseLineWhite from '../../assets/svg/close-line-white.svg'
+import Ru from '../../assets/svg/ru.svg'
+import Uz from '../../assets/svg/uz.svg'
+import En from '../../assets/svg/en.svg'
+
 import { NavbarItems } from "./NavbarItems"
+import { useTranslation } from "react-i18next"
+import { getLanguage } from "../../helpers/language"
 
 const Navbar = () => {
   const [changeColor, setChangeColor] = useState(false)
   const [button, setButton] = useState(false)
   const [menu, setMenu] = useState(false)
+  const [isOpenLen, setIsOpenLen] = useState(false)
+
+  const toggleIsOpenLen = () => setIsOpenLen(!isOpenLen)
+
+  const { t, i18n } = useTranslation();
+  const lan = getLanguage();
+
+  const onLanguageHandle = newLang => {
+    i18n.changeLanguage(newLang);
+    window.localStorage.setItem('language', newLang);
+  };
 
   const changeBackground = () => {
     if (window.scrollY >= 80) {
@@ -54,7 +71,7 @@ const Navbar = () => {
     <section className={changeColor || !menu ? 'navbar active position-fixed' : 'navbar position-fixed'}>
       <Container className="navbar__container">
         <Link to="/">
-          <img src={changeColor || !menu ? LogoBlue : Logo} alt="" />
+          <img src={changeColor || !menu ? LogoBlue : Logo} className="appLogoo" alt="" />
         </Link>
         <div className="navbar__infoLinks">
           {
@@ -89,7 +106,30 @@ const Navbar = () => {
                     </NavLink>
                   ))}
                 </div>
-                <span>O'zbek tili</span>
+                <div className="navbar__flexRightSub4">
+                  <Dropdown isOpen={isOpenLen} toggle={toggleIsOpenLen}>
+                    <DropdownToggle className={changeColor ? "active" : ""} caret>
+                      {lan === "uz" ?
+                        <><img src={Uz} style={{ marginRight: '4px' }} alt="" /> {t('navbar.uz')}</>
+                        : lan === "ru" ?
+                          <><img src={Ru} style={{ marginRight: '4px' }} alt="" /> {t('navbar.ru')}</>
+                          :
+                          <><img src={En} style={{ marginRight: '4px' }} alt="" /> {t('navbar.en')}</>
+                      }
+                    </DropdownToggle>
+                    <DropdownMenu className="">
+                      <DropdownItem onClick={() => onLanguageHandle('uz')}>
+                        <img src={Uz} style={{ marginRight: '4px' }} alt="" /> {t('navbar.uz')}
+                      </DropdownItem>
+                      <DropdownItem onClick={() => onLanguageHandle('ru')}>
+                        <img src={Ru} style={{ marginRight: '4px' }} alt="" /> {t('navbar.ru')}
+                      </DropdownItem>
+                      <DropdownItem onClick={() => onLanguageHandle('en')}>
+                        <img src={En} style={{ marginRight: '4px' }} alt="" /> {t('navbar.en')}
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                </div>
                 <button
                   style={{ marginLeft: '20px' }}
                   className={changeColor ? 'appBtnNavbarChange' : 'appBtn'}>
@@ -102,8 +142,19 @@ const Navbar = () => {
       <div className={!menu ? 'navbarTwo activeTwo sticky-top' : 'navbarTwo sticky-top'}>
         {!menu
           ?
-          <section className="menuSection">
+          <section className="menuSection my-4">
             <Container>
+              <div className="menuSectionFlexLan">
+                <div onClick={() => { onLanguageHandle('uz'); toggleMenu() }}>
+                  <img src={Uz} style={{ marginRight: '4px' }} alt="" /> {t('navbar.uz')}
+                </div>
+                <div onClick={() => { onLanguageHandle('ru'); toggleMenu() }}>
+                  <img src={Ru} style={{ marginRight: '4px' }} alt="" /> {t('navbar.ru')}
+                </div>
+                <div onClick={() => { onLanguageHandle('en'); toggleMenu() }}>
+                  <img src={En} style={{ marginRight: '4px' }} alt="" /> {t('navbar.en')}
+                </div>
+              </div>
               <div className='navbar__linksChange'>
                 {NavbarItems.map((items, index) => (
                   <NavLink
@@ -116,11 +167,6 @@ const Navbar = () => {
                   </NavLink>
                 ))}
               </div>
-              <span>O'zbek tili</span>
-              <button
-                className='appBtn'>
-                Ariza qoldirish
-              </button>
             </Container>
           </section>
           :

@@ -4,6 +4,7 @@ import CategoryCard from "../components/category/CategoryCard"
 import Header from "../components/Header"
 import TitleSubTitle from "../components/TitleSubTitle"
 import { getNotAuthInstance } from "../helpers/httpClient"
+import { getLanguage } from "../helpers/language"
 import Main from "../layout/Main"
 import '../styles/components/Partner.css'
 
@@ -13,16 +14,19 @@ const Partner = (props) => {
 
   const slug = props.match.params.slug
 
+  const lan = getLanguage()
+
+
   const getResults = () => {
     getNotAuthInstance()
-      .get(`/api/v1/manufacturer-list/${slug}/?lan=uz`)
+      .get(`/api/v1/manufacturer-list/${slug}/?lan=${lan}`)
       .then((res) => {
         setResults(res.data)
       }).catch((err) => { });
   }
   const getManufacturer = () => {
     getNotAuthInstance()
-      .get(`/api/v1/drug-list/?page=1&manufacturer=${slug}&lan=uz`)
+      .get(`/api/v1/drug-list/?page=1&manufacturer=${slug}&lan=${lan}`)
       .then((res) => {
         setManufacturer(res.data.results)
       }).catch((err) => { });
@@ -66,7 +70,7 @@ const Partner = (props) => {
               {manufacturer.length > 0
                 ?
                 manufacturer.map((item, index) => (
-                  <Col md={3} key={index}>
+                  <Col sm={6} md={6} lg={4} xl={3} key={index}>
                     <CategoryCard
                       name={item.name}
                       name2={item.manufacturer.name}

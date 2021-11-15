@@ -62,23 +62,27 @@
 @media (max-width: 1200px) and (min-width: 992px) {
   .appHeaderSectionInfo p {
     font-size: 40px;
+    width: 80%;
   }
 }
 
 @media (max-width: 992px) and (min-width: 765px) {
   .appHeaderSectionInfo p {
     font-size: 34px;
+    width: 80%;
   }
 }
 
 @media (max-width: 765px) and (min-width: 576px) {
   .appHeaderSectionInfo p {
     font-size: 30px;
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 576px) and (min-width: 320px) {
   .appHeaderSectionInfo p {
     font-size: 28px;
+    width: 100%;
   }
 }

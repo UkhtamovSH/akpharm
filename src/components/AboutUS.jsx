@@ -13,11 +13,11 @@ const AboutUs = () => {
       <section className="aboutUsSection">
         <Container>
           <Row className="align-items-center h-100">
-            <Col md={6} className="aboutUsSection__Col1">
+            <Col sm={12} md={12} lg={6} xl={6} className="aboutUsSection__Col1">
               <img src={AboutUs1} className="aboutUsSection__Col1Img1" alt="" />
               <img src={AboutUs2} className="aboutUsSection__Col1Img2" alt="" />
             </Col>
-            <Col md={6} className="aboutUsSection__Col2">
+            <Col sm={12} md={12} lg={6} xl={6} className="aboutUsSection__Col2">
               <div className="aboutUsSection__Col2Sub">
                 <TitleSubTitle
                   title={title}

@@ -6,8 +6,12 @@
   display: flex;
 }
 
-.footerSection__sub {
+.footerSection__sub:nth-child(1) {
   width: 33%;
+}
+
+.footerSection__sub:nth-child(2) {
+  width: 66%;
 }
 
 .footerNumber span {
@@ -73,4 +77,80 @@
   font-size: 16px;
   line-height: 100%;
   color: #1F2022;
+}
+
+.footerSection__sub2Flex {
+  display: flex;
+}
+
+.footerSection__sub2FlexSub {
+  width: 50%;
+}
+
+@media (min-width: 1500px) {}
+
+@media (max-width: 1500px) and (min-width: 1200px) {}
+
+@media (max-width: 1200px) and (min-width: 992px) {}
+
+@media (max-width: 992px) and (min-width: 765px) {
+  .footerNumber span:nth-child(2) {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 765px) and (min-width: 576px) {
+  .footerSection__flex {
+    flex-direction: column;
+  }
+
+  .footerSection__sub:nth-child(1) {
+    width: 100%;
+    display: block;
+  }
+
+  .footerSection__sub:nth-child(2) {
+    width: 100%;
+  }
+
+  .footerSection__sub2Flex {
+    margin-top: 30px;
+  }
+
+}
+
+@media only screen and (max-width: 576px) and (min-width: 320px) {
+  .footerNumber span:nth-child(2) {
+    font-size: 24px;
+  }
+
+  .footerSection__flex {
+    flex-direction: column;
+  }
+
+  .footerSection__sub:nth-child(1) {
+    width: 100%;
+    display: block;
+  }
+
+  .footerSection__sub:nth-child(2) {
+    width: 100%;
+  }
+
+  .footerSection__sub2Flex {
+    margin-top: 30px;
+  }
+
+  .footerSection__sub2Flex {
+    flex-direction: column;
+  }
+
+  .footerSection__sub2FlexSub {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .appLogoo2 {
+    width: 29%;
+  }
 }

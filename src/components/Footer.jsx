@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="footerSection__flex">
             <div className="footerSection__sub">
               <Link to="/">
-                <img src={LogoBlue} alt="" />
+                <img src={LogoBlue} className="appLogoo2" alt="" />
               </Link>
               <br /> <br />
               <a href="tel:+998712086784" className="footerNumber text-decoration-none">
@@ -24,46 +24,50 @@ const Footer = () => {
               </a>
             </div>
             <div className="footerSection__sub">
-              <p className="footerSection__linksTitle">
-                Kompaniya haqida
-              </p>
-              <div className="footerSection__links">
-                {NavbarItems.map((items, index) => (
-                  <NavLink to={items.to}
-                    className="text-decoration-none my-4" activeClassName="navbar__linksActive"
-                    key={index}>
-                    {items.name}
-                  </NavLink>
-                ))}
-              </div>
-            </div>
-            <div className="footerSection__sub">
-              <p className="footerSection__linksTitle">
-                Biz bilan bogʻlaning
-              </p>
-              <div className="">
-                <a href="tel:+998712086784" className="text-decoration-none text-dark" style={{ color: '#1F2022' }}>
-                  <div className="footerSection__linksDiv">
-                    <img src={Phone2} alt="" />
+              <div className="footerSection__sub2Flex">
+                <div className="footerSection__sub2FlexSub">
+                  <p className="footerSection__linksTitle">
+                    Kompaniya haqida
+                  </p>
+                  <div className="footerSection__links">
+                    {NavbarItems.map((items, index) => (
+                      <NavLink to={items.to}
+                        className="text-decoration-none my-4" activeClassName="navbar__linksActive"
+                        key={index}>
+                        {items.name}
+                      </NavLink>
+                    ))}
                   </div>
-                  <span>+998 71 208 67 84</span>
-                </a>
-              </div>
-              <div className="my-4">
-                <div className="footerSection__linksDiv">
-                  <img src={Email} width="24" height="24" alt="" />
                 </div>
-                <span>
-                  info@akpharm.uz
-                </span>
-              </div>
-              <div className="">
-                <div className="footerSection__linksDiv">
-                  <img src={Address2} alt="" />
+                <div className="footerSection__sub2FlexSub">
+                  <p className="footerSection__linksTitle">
+                    Biz bilan bogʻlaning
+                  </p>
+                  <div className="">
+                    <a href="tel:+998712086784" className="text-decoration-none text-dark" style={{ color: '#1F2022' }}>
+                      <div className="footerSection__linksDiv">
+                        <img src={Phone2} alt="" />
+                      </div>
+                      <span>+998 71 208 67 84</span>
+                    </a>
+                  </div>
+                  <div className="my-4">
+                    <div className="footerSection__linksDiv">
+                      <img src={Email} width="24" height="24" alt="" />
+                    </div>
+                    <span>
+                      info@akpharm.uz
+                    </span>
+                  </div>
+                  <div className="">
+                    <div className="footerSection__linksDiv">
+                      <img src={Address2} alt="" />
+                    </div>
+                    <span>
+                      Olmazor tumani, Kichik halqa yoʻli koʻchasi, 5-A
+                    </span>
+                  </div>
                 </div>
-                <span>
-                  Olmazor tumani, Kichik halqa yoʻli koʻchasi, 5-A
-                </span>
               </div>
             </div>
           </div>

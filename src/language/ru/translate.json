@@ -1,3 +1,9 @@
 {
-  "translations": {}
+  "translations": {
+    "navbar": {
+      "ru": "Русский",
+      "uz": "Узбекский",
+      "en": "Aнглийский"
+    }
+  }
 }

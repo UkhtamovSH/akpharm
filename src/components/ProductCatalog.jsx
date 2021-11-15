@@ -6,15 +6,18 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Title from "./Title";
 import { Link } from "react-router-dom";
+import { getLanguage } from "../helpers/language";
 
 const ProductCatalog = () => {
   const [dataProduct, setDataProduct] = useState([])
   // const [loading, setLoading] = useState(false)
 
+  const lan = getLanguage()
+
   const getProductData = () => {
     // setLoading(true)
     getNotAuthInstance()
-      .get(`/api/v1/category-list/?lan=uz`)
+      .get(`/api/v1/category-list/?lan=${lan}`)
       .then(res => {
         setDataProduct(res.data)
         // setLoading(false)
@@ -27,35 +30,43 @@ const ProductCatalog = () => {
   }, [])
 
   const settings = {
-    // className: "center",
-    centerMode: true,
     infinite: true,
-    centerPadding: "360px",
     slidesToShow: 1,
     speed: 800,
     autoplay: true,
+    centerMode: true,
+    centerPadding: "360px",
     autoplaySpeed: 4000,
-    // responsive: [
-    //   {
-    //     breakpoint: 1200,
-    //     settings: {
-    //       slidesToShow: 2,
-    //       slidesToScroll: 1
-    //     }
-    //   },
-    //   {
-    //     breakpoint: 1008,
-    //     settings: {
-    //       slidesToShow: 1,
-    //       slidesToScroll: 1
-    //     }
-    //   },
-    //   {
-    //     breakpoint: 800,
-    //     settings: "unslick"
-    //   }
-
-    // ]
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "300px",
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "250px",
+        }
+      },
+      {
+        breakpoint: 765,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "180px"
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "120px",
+        }
+      }
+    ]
   };
 
   const appTitle = "Akpharmdagi mahsulotlar katalogi"
@@ -71,7 +82,7 @@ const ProductCatalog = () => {
                 alt="" />
               <div className="d-flex justify-content-center w-100">
                 <Link to={`/categories/${item.slug}`} className="productCatalogSliderInfo text-decoration-none">
-                  <p>{item.name}</p>
+                  {item.name}
                 </Link>
               </div>
             </div>

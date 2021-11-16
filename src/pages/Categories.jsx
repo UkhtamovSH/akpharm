@@ -16,21 +16,24 @@ const Categories = (props) => {
 
   const lan = getLanguage();
 
-  const slug = props.match.params.slug
-  // "https://api.akpharm.uz/api/v1/drug-list/" + (slug ? "?category=" + slug : "")
+  const slug = props.match.params.slug ? props.match.params.slug : "";
+
   const getResults = (
     page = 1,
-    next_url = `https://api.akpharm.uz/api/v1/drug-list/?page=${page}&category=${slug}&lan=${lan}`) => {
+    next_url = `/api/v1/drug-list/?page=${page}${slug ? `&category=${slug}` : ''}&lan=${lan}`) => {
     if (page === 1) {
       setLoading(true);
     }
     getNotAuthInstance()
       .get(next_url)
       .then((res) => {
-        setResultsCategory([...resultsCategory, ...res.data.results])
+        const result = page === 1 ? res.data.results : [...resultsCategory, ...res.data.results]
+        setResultsCategory(result)
         setNextUrl(res.data.next);
         setLoading(false);
-      }).catch((err) => { });
+      }).catch((err) => {
+        setResultsCategory([])
+      });
   }
   useEffect(() => {
     getResults();
@@ -41,31 +44,32 @@ const Categories = (props) => {
     <Main>
       <Header title={title} />
       <CategoryLayout>
-        <InfiniteScroll
-          dataLength={resultsCategory.length}
-          next={() => {
-            getResults(2, nextUrl);
-          }}
-          hasMore={nextUrl ? true : false}
-          loader={<h4>Loading...</h4>}
-          endMessage={
-            <p style={{ textAlign: "center" }}>
-              <b>You have seen it all</b>
-            </p>
-          }
-        >
-          <Row>
-            {resultsCategory.map((result, index) => (
-              <Col md={6} lg={6} xl={4} key={index}>
-                <CategoryCard
-                  img={result.image}
-                  name={result.name}
-                  name2={result.manufacturer.name}
-                />
-              </Col>
-            ))}
-          </Row>
-        </InfiniteScroll>
+        {loading ? (
+          <div className="d-flex justify-content-center align-items-center w-100 h-100">
+            Loading...
+          </div>
+        ) : (
+          <InfiniteScroll
+            dataLength={resultsCategory.length}
+            next={() => {
+              getResults(2, nextUrl);
+            }}
+            hasMore={nextUrl ? true : false}
+            loader={<h4>Loading...</h4>}
+          >
+            <Row>
+
+              {resultsCategory.map((result, index) => (
+                <Col md={6} lg={6} xl={4} key={index}>
+                  <CategoryCard
+                    {...result}
+                  />
+                </Col>
+              ))}
+            </Row>
+
+          </InfiniteScroll>
+        )}
       </CategoryLayout>
       <section className="partnersViewCategories">
         <PartnersView />

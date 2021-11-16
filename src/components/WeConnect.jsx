@@ -48,6 +48,13 @@ const WeConnect = () => {
           setText("");
         })
         .catch((error) => { });
+    } else if (name.length < 6 && number.length < 12 && text.length < 10) {
+      setErrors({
+        ...errors,
+        name_error: true,
+        number_error: true,
+        text_error: true
+      });
     } else if (name.length < 6) {
       setErrors({
         ...errors,

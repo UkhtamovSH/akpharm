@@ -72,9 +72,7 @@ const Partner = (props) => {
                 manufacturer.map((item, index) => (
                   <Col sm={6} md={6} lg={4} xl={3} key={index}>
                     <CategoryCard
-                      name={item.name}
-                      name2={item.manufacturer.name}
-                      img={item.image}
+                      {...item}
                     />
                   </Col>
                 ))
